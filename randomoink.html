@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <title>Random Oink Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+    <div class="header"><span id="headerspan">Random Oink Generator</span></div>
+
+    <span id="inputspan">
+        Generates random text in Piggish.<br>
+        Input number of words from 2 to 10000 (Default 100)
+        <br>
+        <input id="numinput" type="number" min="2" max="10000">
+        <br>
+        <input id="btn" type="button" value="GENERATE" onclick="getInput()">
+        <br>
+        <input id="copy-btn" type="button" value="SELECT TEXT" onclick="selectText()">
+        <p id="oink"></p>
+    </span>
+</body>
+</html>
