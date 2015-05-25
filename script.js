@@ -1,7 +1,8 @@
 //arrays of possible words and punctuations
 var words = ["oink", "piggy", "oinka", "oinky", "pig", "piggu", "poggy", "noink", "yoink"];
 var Cwords = ["Oink", "Piggy", "Oinka", "Oinky", "Pig", "Piggu", "Poggy", "Noink", "Yoink"];
-var punctuation = [",", ".", "!", "?"];
+var punctuation = [",", ",", ",", ",", ".", ".", ".", "!", "!", "?"]; //decreased probability of exclamation and question mark
+var noOfCommas = 4;
 
 //generate random int min(inclusive) max(exclusive)
 function getRandomInt(min, max) {
@@ -11,9 +12,11 @@ function getRandomInt(min, max) {
 function getInput(){
     var temp = document.getElementById('numinput').value;
     //check for validity; invalid will use 100 words
-    if(isNaN(temp) || temp<2 || temp>10000){
+    if(isNaN(temp) || temp<2 || temp>100000){
+        document.getElementById('error').style.display = "block";//toggle display of error message
         generateText(100);
     }else{
+        document.getElementById('error').style.display = "none";
         generateText(Math.floor(temp)); //ensures number is integer
     }
 }
@@ -25,9 +28,9 @@ string, which will be placed in the html when all the text is added.
 */
 function generateText(numOfWords) {
     //counter for punctuation. 
-    var count = getRandomInt(2,9);
+    var count = getRandomInt(2,10);
     //string to store text; intialized with random capitalized words
-    var displayed = Cwords[getRandomInt(0,9)];
+    var displayed = Cwords[getRandomInt(0,Cwords.length)];
     //boolean to check if the word needs to be capital
     var isCapital = false;
 
@@ -36,32 +39,32 @@ function generateText(numOfWords) {
         displayed += " ";//add a space
 
         if(!isCapital) {
-            displayed += words[getRandomInt(0,9)];
+            displayed += words[getRandomInt(0,words.length)];
         } else {
-            displayed += Cwords[getRandomInt(0,9)];
+            displayed += Cwords[getRandomInt(0,Cwords.length)];
             isCapital = false;
         }
 
         //when count reaches zero, it is time to insert a punctuation
         if (count === 0) {
-            var puncSelector = getRandomInt(0,4);
+            var puncSelector = getRandomInt(0,punctuation.length);
             displayed += punctuation[puncSelector];
-            if(puncSelector>0) { //is not a comma, thus end of sentence
+            if(puncSelector >= noOfCommas) { //is not a comma, thus end of sentence
               isCapital = true;
             }
-            count = getRandomInt(2,9);//reset count
+            count = getRandomInt(2,10);//reset count
         }
         count--; 
     }
 
     //word at the end needs an ending punctuation
-    displayed += " " + words[getRandomInt(0,9)] + punctuation[getRandomInt(1,4)];
+    displayed += " " + words[getRandomInt(0,words.length)] + punctuation[getRandomInt(noOfCommas,punctuation.length)];
     //displays the text
     document.getElementById('oink').innerHTML = displayed;
-
+    document.getElementById('oinkContainer').style.display = "block";
 }
 
-//function i stole from here to select text
+//function i copied from here to select text
 //https://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse
 function selectText() {
     var doc = document;

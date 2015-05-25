@@ -7,12 +7,12 @@ body{
 .header{
   top: 0;
   left: 0;
-  font-size: 2em;
+  font-size: 3vmax;
   text-align:center;
   background-color: #2e7d32;
   color: #FFFFFF;
   width: 100%;
-  height: 75px;
+  height: 13%;
   margin: 0;
   position: fixed;
   display: block;
@@ -32,13 +32,13 @@ body{
   text-align: center;
   top: 45%;
   width: 100%;
-  font-size: 20px;
+  font-size: 2vmax;
 }
 
 #numinput{
   text-align: center;
   width: 100px;
-  font-size: 18px;
+  font-size: 1.7vmax;
   margin-top: 10px;
 }
 
@@ -47,7 +47,7 @@ body{
   margin-top: 20px;
   border-radius: 6px;
   color: #ffffff;
-  font-size: 15px;
+  font-size: 1.2vmax;
   background: #40c4ff;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
@@ -69,7 +69,24 @@ body{
 }
 
 #oink{
+  font-size: 1.5vmax;
   text-align: left;
   padding-left: 20px;
   padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+#oinkContainer{
+  background-color: #43a047;
+  border-radius: 6px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: none;
+}
+
+#error{
+  margin-top: 20px;
+  background-color: red;
+  display: none;
 }
