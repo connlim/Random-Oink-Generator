@@ -1,5 +1,16 @@
 # Change Log
 
+## [0.0.3] - 2015-06-03
+### Added
+- Header shadow
+
+### Changed
+- Improved button design
+
+### Fixed
+- Fixed last word being lowercase when there is end of sentence punctuation before it
+
+
 ## [0.0.2] - 2015-05-25
 ### Added
 - Error message for invalid input
