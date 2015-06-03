@@ -17,6 +17,7 @@ body{
   position: fixed;
   display: block;
   z-index: 1;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 #headerspan{
@@ -43,9 +44,9 @@ body{
 }
 
 #btn, #copy-btn {
-  box-shadow: 0px 3px 6px #111111;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
   margin-top: 20px;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #ffffff;
   font-size: 1.2vmax;
   background: #40c4ff;
@@ -59,13 +60,12 @@ body{
 #btn:hover, #copy-btn:hover {
   background: #00b0ff;
   text-decoration: none;
-  box-shadow: 0px 4px 6px #111111;
 }
 
 #btn:active, #copy-btn:active{
   background: #0091ea;
   text-decoration: none;
-  box-shadow: 0px 4px 6px #111111;
+  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.3);
 }
 
 #oink{
