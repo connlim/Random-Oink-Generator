@@ -58,7 +58,13 @@ function generateText(numOfWords) {
     }
 
     //word at the end needs an ending punctuation
-    displayed += " " + words[getRandomInt(0,words.length)] + punctuation[getRandomInt(noOfCommas,punctuation.length)];
+    if(!isCapital) {
+        displayed += " " + words[getRandomInt(0,words.length)];
+    } else {
+        displayed += " " + Cwords[getRandomInt(0,Cwords.length)];
+        isCapital = false;
+    }
+    displayed += punctuation[getRandomInt(noOfCommas,punctuation.length)];
     //displays the text
     document.getElementById('oink').innerHTML = displayed;
     document.getElementById('oinkContainer').style.display = "block";
