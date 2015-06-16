@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.4] - 2015-06-16
+### Added
+- Warning for large numbers
+
+### Changed
+- Increased word limit from 100000 to 1000000
+
+
 ## [0.0.3] - 2015-06-03
 ### Added
 - Header shadow

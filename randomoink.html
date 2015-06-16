@@ -12,9 +12,11 @@
 
     <span id="inputspan">
         Generates random text in Piggish.<br>
-        Input number of words from 2 to 100000
+        Input number of words from 2 to 1000000
         <br>
-        <input id="numinput" type="number" min="2" max="100000">
+        <div id="slowDownMessage">Warning: Large numbers may slow down the browser</div>
+        <br>
+        <input id="numinput" type="number" min="2" max="1000000">
         <br>
         <input id="btn" type="button" value="GENERATE" onclick="getInput()">
         <br>

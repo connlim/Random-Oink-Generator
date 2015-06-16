@@ -12,7 +12,7 @@ function getRandomInt(min, max) {
 function getInput(){
     var temp = document.getElementById('numinput').value;
     //check for validity; invalid will use 100 words
-    if(isNaN(temp) || temp<2 || temp>100000){
+    if(isNaN(temp) || temp<2 || temp>1000000){
         document.getElementById('error').style.display = "block";//toggle display of error message
         generateText(100);
     }else{
